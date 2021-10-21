@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+#container {
+    margin: auto;
+    width: 95vh;
+    height: 95vh;
+    background-color: gray;
+}
