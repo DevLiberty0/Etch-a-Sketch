@@ -33,6 +33,12 @@ body {
     box-shadow: rgba(0, 0, 0, 0.466) 2px 5px 8px 3px;
     background: -moz-linear-gradient(top,rgb(103, 164, 255), rgb(51, 115, 211)) ;
     color: rgb(40, 94, 175);
+    text-align: center;
+}
+
+input {
+    all: unset;
+    width: 100%;
 }
 
 #container {

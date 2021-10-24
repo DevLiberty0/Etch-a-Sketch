@@ -1,6 +1,8 @@
 const backgroundSquare = document.querySelector('.background-square');
 const container = document.querySelector('#container');
 const body = document.querySelector('body');
+const size = document.querySelector('#size');
+
 let box = [], square = [];
 
 for(let i = 0; i < 20; i++) {
@@ -15,9 +17,21 @@ for(let i = 0; i < 20; i++) {
     square[i].style.marginTop = posX + "px";
     body.appendChild(square[i]);
 }
-
-for(let i = 0; i < 25; i++) {
-    box[i] = document.createElement('div');
-    box[i].setAttribute('id', 'box');
-    container.appendChild(box[i]);
+function createSquares() {
+    let sqPerEdge = size.value;
+    if(sqPerEdge > 30) {
+        sqPerEdge = 30;
+        size.value = 30;
+    }
+    while(container.lastChild) {
+        container.lastChild.remove();
+    }
+    for(let i = 0; i < sqPerEdge * sqPerEdge; i++) {
+        box[i] = document.createElement('div');
+        box[i].setAttribute('id', 'box');
+        container.appendChild(box[i]);
+    }
+    console.log(sqPerEdge);
 }
+createSquares();
+//size.addEventListener('change', createSquares);
