@@ -1,4 +1,2 @@
-menu
-    - niewidoczne pokazuje sie po najechaniu kursorem
-plansza
-    - niewidoczna zapełnia się po najechaniu
+Dziennik osiągnięć:
+- największą trudność sprawiło skalowanie rozmiaru box-shadow kwadratów adekwatnie do ich rozmiaru
