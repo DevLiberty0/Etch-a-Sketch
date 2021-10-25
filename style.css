@@ -64,7 +64,3 @@ input {
     font-size:0vmax;
     z-index: 1;
 }
-
-.box:hover {
-    background-color: red;    
-}

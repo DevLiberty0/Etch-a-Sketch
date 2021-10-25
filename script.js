@@ -1,7 +1,6 @@
-const backgroundSquare = document.querySelector('.background-square');
 const container = document.querySelector('#container');
 const body = document.querySelector('body');
-const size = document.querySelector('#size');
+const size = document.querySelector('#size'); //playing board - squares per edge
 
 
 let box = [], square = [];
@@ -24,6 +23,26 @@ function calcBoxShadow(value) { // ( container width / number of squares per edg
     return size;
 }
 
+function boxUp(obj, boxShadowSize) {
+    obj.style.boxShadow = "rgb(40, 94, 175)" 
+                                + boxShadowSize + "px "
+                                + boxShadowSize + "px "
+                                + boxShadowSize*2 + "px, rgb(137, 184, 255) "
+                                + -boxShadowSize + "px "
+                                + -boxShadowSize + "px "
+                                + boxShadowSize*2 + "px";
+}
+
+let boxDown = function(boxShadowSize) {
+    this.style.boxShadow = "inset rgb(40, 94, 175)" 
+                            + boxShadowSize + "px "
+                            + boxShadowSize + "px "
+                            + boxShadowSize + "px, inset rgb(154, 194, 255) "
+                            + -boxShadowSize + "px "
+                            + -boxShadowSize + "px "
+                            + boxShadowSize + "px"; 
+}
+
 function createSquares() {
     let num = +size.value;
     if(num > 30) {
@@ -40,13 +59,8 @@ function createSquares() {
     for(let i = 0; i < num * num; i++) {
         box[i] = document.createElement('div');
         box[i].setAttribute('class', 'box');
-        box[i].style.boxShadow = "inset rgb(40, 94, 175)" 
-                                + boxShadowSize + "px "
-                                + boxShadowSize + "px "
-                                + boxShadowSize + "px, inset rgb(154, 194, 255) "
-                                + -boxShadowSize + "px "
-                                + -boxShadowSize + "px "
-                                + boxShadowSize + "px"; 
+        boxUp(box[i], boxShadowSize);
+        box[i].addEventListener( 'mouseenter', boxDown.bind(box[i], boxShadowSize) ); // ?
         container.appendChild(box[i]);
     }
     container.style.gridTemplateColumns = "repeat(" + num + ", 1fr)";
