@@ -3,6 +3,7 @@ const container = document.querySelector('#container');
 const body = document.querySelector('body');
 const size = document.querySelector('#size');
 
+
 let box = [], square = [];
 
 for(let i = 0; i < 20; i++) {
@@ -18,10 +19,13 @@ for(let i = 0; i < 20; i++) {
     body.appendChild(square[i]);
 }
 function createSquares() {
-    let sqPerEdge = size.value;
+    let sqPerEdge = +size.value;
     if(sqPerEdge > 30) {
         sqPerEdge = 30;
         size.value = 30;
+    }
+    if(!sqPerEdge || sqPerEdge == 0) {
+        sqPerEdge = 0;
     }
     while(container.lastChild) {
         container.lastChild.remove();
