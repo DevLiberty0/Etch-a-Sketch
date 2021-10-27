@@ -35,6 +35,22 @@ body {
     background: -moz-linear-gradient(top,rgb(103, 164, 255), rgb(51, 115, 211)) ;
     color: rgb(40, 94, 175);
     text-align: center;
+    cursor: default;
+    opacity: 0.7;
+}
+
+.nav-btn:hover {
+    transition-property: scale, opacity;
+    transition-duration: 15ms;
+    scale: 1.05;
+    opacity: 1;
+    color: rgb(162, 202, 255);
+}
+#clear-button:active {
+    color: rgb(162, 202, 255);
+    background: -moz-linear-gradient(top, rgb(51, 115, 211), rgb(103, 164, 255));
+    box-shadow: inset rgb(35, 80, 146) 3px 5px 15px, inset rgb(174, 206, 255) -3px -5px 15px;
+    
 }
 
 input {
@@ -50,6 +66,7 @@ input {
 
 .background-square {
     position: absolute;
+    align-self: flex-start;
     opacity: 0.2;
     background-color: white;
     border-radius: 13%;

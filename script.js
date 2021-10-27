@@ -1,14 +1,14 @@
 const container = document.querySelector('#container');
 const body = document.querySelector('body');
 const size = document.querySelector('#size'); //playing board - squares per edge
-
+const clearButton = document.querySelector("#clear-button");
 
 let box = [], square = [];
 
-for(let i = 0; i < 20; i++) {           //  loop draws background squares
+for(let i = 0; i < 30; i++) {           //  loop draws background squares
     square[i] = document.createElement('div');
     square[i].setAttribute('class', 'background-square');
-    let rozmiar = Math.floor(Math.random() * 100) + 10;
+    let rozmiar = Math.floor(Math.random() * 150) + 20;
     let posX = Math.floor(Math.random() * window.innerHeight);
     let posY = Math.floor(Math.random() * window.innerWidth);
     square[i].style.width = rozmiar + "px";
@@ -27,7 +27,7 @@ function boxUp(obj, boxShadowSize) {
     obj.style.boxShadow = "rgb(40, 94, 175)" 
                                 + boxShadowSize + "px "
                                 + boxShadowSize + "px "
-                                + boxShadowSize*2 + "px, rgb(137, 184, 255) "
+                                + boxShadowSize*2 + "px, rgb(154, 194, 255) "
                                 + -boxShadowSize + "px "
                                 + -boxShadowSize + "px "
                                 + boxShadowSize*2 + "px";
@@ -71,4 +71,4 @@ function createSquares() {
 size.value = 2; // default number of playing squares
 createSquares();
 size.onkeyup = createSquares;
-
+clearButton.onclick = createSquares;
