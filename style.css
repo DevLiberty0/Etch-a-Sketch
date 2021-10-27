@@ -65,7 +65,7 @@ input {
     display: grid;
     width: 95vh;
     height: 95vh;
-    z-index: 2;
+    z-index: 3;
 }
 
 .background-square {
@@ -80,7 +80,6 @@ input {
 
 .box {
     margin: 3%;
-    background-color: rgb(103, 164, 255);
     border-radius: 13%;
     font-size:0vmax;
     z-index: 1;
