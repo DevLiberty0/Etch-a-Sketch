@@ -26,7 +26,7 @@ function calcBoxShadow(value) { // ( container width / number of squares per edg
     return size;
 }
 
-function boxUp(obj, boxShadowSize) {
+function boxUp(obj, boxShadowSize, index) {
     obj.style.boxShadow = "rgb(40, 94, 175)" 
                                 + boxShadowSize + "px "
                                 + boxShadowSize + "px "
@@ -35,6 +35,7 @@ function boxUp(obj, boxShadowSize) {
                                 + -boxShadowSize + "px "
                                 + boxShadowSize*2 + "px";
     obj.style.backgroundColor = "rgb(103, 164, 255)";
+    obj.style.zIndex = index;
     obj.className = 'box';
 }
 
@@ -72,10 +73,10 @@ function createSquares() {
     while(container.lastChild) {
         container.lastChild.remove();
     }
-    for(let i = 0; i < num * num; i++) {
+    for(let i = 0, x = 50; i < num * num; i++, x--) {
         box[i] = document.createElement('div');
         box[i].className = 'box';
-        boxUp(box[i], boxShadowSize);
+        boxUp(box[i], boxShadowSize, x);
         box[i].addEventListener( 'mouseenter', boxDown.bind(box[i], boxShadowSize) );
         container.appendChild(box[i]);
     }

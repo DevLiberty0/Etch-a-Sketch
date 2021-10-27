@@ -79,8 +79,8 @@ input {
 }
 
 .box {
+    position: relative;
     margin: 3%;
     border-radius: 13%;
     font-size:0vmax;
-    z-index: 1;
 }
