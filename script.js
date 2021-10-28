@@ -43,7 +43,7 @@ let boxDown = function(boxShadowSize) {
     if(this.className != 'boxD, box'){
         let colorForThis = paintBox(color);
         let darkColor = colorForThis.replace('50', '45').replace('70', '50');
-        let lightColor = colorForThis.replace('50', '75').replace('70', '80');
+        let lightColor = colorForThis.replace('50', '71').replace('70', '80');
         console.log(colorForThis);
         console.log(lightColor);
         this.style.boxShadow = "inset "
@@ -99,6 +99,10 @@ function changeColor() {
 function paintBox(style) {
     if(style == "rainbow") {
         let num = Math.floor(Math.random() * 361);
+        let black = Math.floor(Math.random() * 10);
+        if(black == 0) {
+            return "black";
+        }
         return "hsl(" + num + ", 100%, 50%)";
     } else return "hsl(216, 100%, 70%)";
 }
