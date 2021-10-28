@@ -30,17 +30,14 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 100px;
-    box-shadow: rgba(0, 0, 0, 0.466) 2px 5px 8px 3px;
-    background: -moz-linear-gradient(top,rgb(103, 164, 255), rgb(51, 115, 211)) ;
-    background-image: -o-linear-gradient(top,rgb(103, 164, 255), rgb(51, 115, 211)) ;
-    background-image: -webkit-gradient(top,rgb(103, 164, 255), rgb(51, 115, 211)) ;
-    background: -ms-linear-gradient(top,rgb(103, 164, 255), rgb(51, 115, 211)) ;
-    background: linear-gradient(top,rgb(103, 164, 255), rgb(51, 115, 211)) ;
+    box-shadow: #00000077 2px 5px 8px 3px;
+    background-image: -moz-linear-gradient(top,rgb(103, 164, 255) 0%, rgb(51, 115, 211) 100%) ;
+    background-image: -o-linear-gradient(top,rgb(103, 164, 255) 0%, rgb(51, 115, 211) 100%) ;
+    background-image: -ms-linear-gradient(top,rgb(103, 164, 255) 0%, rgb(51, 115, 211) 100%) ;
     color: rgb(40, 94, 175);
     text-align: center;
     cursor: default;
     opacity: 0.7;
-    
 }
 
 .nav-btn:hover {
