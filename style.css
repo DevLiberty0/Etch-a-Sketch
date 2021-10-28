@@ -39,8 +39,16 @@ body {
 }
 
 .nav-btn:hover {
+    -moz-transition-property: scale, opacity;
+    -moz-transition-duration: 15ms;
+    -webkit-transition-property: scale, opacity;
+    -webkit-transition-duration: 15ms;
+    -o-transition-property: scale, opacity;
+    -o-transition-duration: 15ms;
     transition-property: scale, opacity;
     transition-duration: 15ms;
+    -ms-transition-property: scale, opacity;
+    -ms-transition-duration: 15ms;
     scale: 1.05;
     opacity: 1;
     color: rgb(162, 202, 255);
